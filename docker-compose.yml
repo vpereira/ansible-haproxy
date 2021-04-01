@@ -44,6 +44,9 @@ services:
       - 8081:80
     restart: unless-stopped
   haproxy:
+    depends_on: 
+      - frontend1
+      - frontend2
     build:
       context: .
       dockerfile: Dockerfile.haproxy
@@ -59,6 +62,8 @@ services:
       - USER_NAME=frontend #optional
     volumes:
       - ./config-haproxy:/config
+      - ./config-haproxy/haproxy.cfg:/etc/haproxy/haproxy.cfg
     ports:
       - 2224:2222
+      - 8082:80
     restart: unless-stopped

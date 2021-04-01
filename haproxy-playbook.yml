@@ -1,0 +1,9 @@
+---
+- hosts: haproxies
+  tasks:
+    - name: haproxy is running
+      community.general.apk:
+        name: haproxy
+        update_cache: yes
+      become: yes
+

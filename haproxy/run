@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+haproxy -f /etc/haproxy/haproxy.cfg

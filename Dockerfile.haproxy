@@ -1,3 +1,10 @@
 FROM ghcr.io/linuxserver/openssh-server
 
 RUN apk add python3 haproxy
+
+RUN mkdir -p /etc/services.d
+ADD haproxy /etc/services.d/haproxy
+RUN mkdir -p /run/haproxy
+RUN chmod 755 /etc/services.d/haproxy/run
+
+

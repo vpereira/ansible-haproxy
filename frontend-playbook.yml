@@ -1,0 +1,9 @@
+---
+- hosts: frontends
+  tasks:
+    - name: nginx is running
+      community.general.apk:
+        name: nginx
+        update_cache: yes
+      become: yes
+

@@ -34,3 +34,23 @@ $ curl http://localhost:8080
 # frontend2
 $ curl http://localhost:8081
 ```
+
+To check if the haproxy is working as expected:
+
+```
+$ curl http://localhost:8082
+<html>
+  <head></head>
+  <body> 
+    <h1>Hello, frontend1</h1>
+  </body>
+</html>
+
+$ curl http://localhost:8082
+<html>
+  <head></head>
+  <body> 
+    <h1>Hello, frontend2</h1>
+  </body>
+</html>
+```
