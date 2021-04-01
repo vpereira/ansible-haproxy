@@ -17,8 +17,10 @@ services:
       - USER_NAME=frontend #optional
     volumes:
       - ./config-frontend1:/config
+      - ./config-frontend1/index.html:/usr/share/nginx/html/index.html
     ports:
       - 2222:2222
+      - 8080:80
     restart: unless-stopped
   frontend2:
     build:
@@ -36,8 +38,10 @@ services:
       - USER_NAME=frontend #optional
     volumes:
       - ./config-frontend2:/config
+      - ./config-frontend2/index.html:/usr/share/nginx/html/index.html
     ports:
       - 2223:2222
+      - 8081:80
     restart: unless-stopped
   haproxy:
     build:

@@ -24,3 +24,13 @@ password (assuming you have ansible installed in your host):
 for h in frontend1 frontend2 haproxy; do ansible $h -i inventory.yml -m ping; done
 
 ```
+
+To check if http servers are reachable on the frontends:
+
+```
+# frontend1
+$ curl http://localhost:8080
+
+# frontend2
+$ curl http://localhost:8081
+```

@@ -1,3 +1,10 @@
 FROM ghcr.io/linuxserver/openssh-server
 
 RUN apk add python3 nginx
+
+RUN mkdir -p /etc/services.d
+ADD nginx /etc/services.d/nginx
+RUN mkdir -p /run/nginx
+RUN chmod 755 /etc/services.d/nginx/run
+
+ADD http-default_server.conf /etc/nginx/conf.d/default.conf
