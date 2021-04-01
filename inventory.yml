@@ -1,5 +1,5 @@
 ---
-all:
+frontends:
   hosts:
     frontend1:
       ansible_connection: ssh
@@ -9,6 +9,9 @@ all:
       ansible_connection: ssh
       ansible_host: 127.0.0.1
       ansible_port: 2223
+
+haproxes:
+  hosts:
     haproxy:
       ansible_connection: ssh
       ansible_host: 127.0.0.1
