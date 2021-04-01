@@ -1,0 +1,12 @@
+---
+all:
+  hosts:
+    frontend-1:
+      ansible_connection: ssh
+      ansible_host: 127.0.0.1
+      ansible_port: 2222
+    frontend-2:
+      ansible_connection: ssh
+      ansible_host: 127.0.0.1
+      ansible_port: 2224
+
